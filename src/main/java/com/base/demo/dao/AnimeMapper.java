@@ -13,7 +13,7 @@ public interface AnimeMapper {
 
     int deleteByExample(AnimeExample example);
 
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(Anime record);
 
@@ -21,7 +21,7 @@ public interface AnimeMapper {
 
     List<Anime> selectByExample(AnimeExample example);
 
-    Anime selectByPrimaryKey(String id);
+    Anime selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") Anime record, @Param("example") AnimeExample example);
 

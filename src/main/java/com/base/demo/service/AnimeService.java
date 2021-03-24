@@ -26,13 +26,13 @@ public class AnimeService {
     public Pagination list(AnimeVo theVo) {
         AnimeExample animeExample = new AnimeExample();
         AnimeExample.Criteria criteria = animeExample.createCriteria();
-        if (StringUtils.isNotBlank(theVo.getId())) {
+        if (theVo.getId() != null) {
             criteria.andIdEqualTo(theVo.getId());
         }
         if (StringUtils.isNotBlank(theVo.getName())) {
             criteria.andNameLike("%" + theVo.getName() + "%");
         }
-        if (StringUtils.isNotBlank(theVo.getScore())) {
+        if (theVo.getScore() != null) {
             criteria.andScoreEqualTo(theVo.getScore());
         }
         if (StringUtils.isNotBlank(theVo.getOrderByClause())) {
@@ -64,7 +64,7 @@ public class AnimeService {
     public AnimeVo delete(AnimeVo theVo) {
         AnimeExample example = new AnimeExample();
         AnimeExample.Criteria criteria = example.createCriteria();
-        if (StringUtils.isNotBlank(theVo.getId())) {
+        if (theVo.getId() != null) {
             criteria.andIdEqualTo(theVo.getId());
         }
         int i = animeMapper.deleteByExample(example);
@@ -75,7 +75,7 @@ public class AnimeService {
         AnimeExample animeExample = new AnimeExample();
         AnimeExample.Criteria criteria = animeExample.createCriteria();
         Anime anime = null;
-        if (StringUtils.isNotBlank(theVo.getId())){
+        if (theVo.getId() != null) {
             anime = animeMapper.selectByPrimaryKey(theVo.getId());
         }
         CopyUtils.copyProperties(theVo, anime);

@@ -1,7 +1,7 @@
 package com.base.demo.entity;
 
 public class Anime {
-    private String id;
+    private Integer id;
 
     private String date;
 
@@ -11,14 +11,14 @@ public class Anime {
 
     private String tag;
 
-    private String score;
+    private Integer score;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getDate() {
@@ -53,11 +53,11 @@ public class Anime {
         this.tag = tag == null ? null : tag.trim();
     }
 
-    public String getScore() {
+    public Integer getScore() {
         return score;
     }
 
-    public void setScore(String score) {
-        this.score = score == null ? null : score.trim();
+    public void setScore(Integer score) {
+        this.score = score;
     }
 }

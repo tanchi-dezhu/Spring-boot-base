@@ -3,7 +3,7 @@ package com.base.demo.vo;
 import java.io.Serializable;
 
 public class AnimeVo extends  BaseVo implements Serializable {
-    private String id;
+    private Integer id;
 
     private String date;
 
@@ -13,14 +13,14 @@ public class AnimeVo extends  BaseVo implements Serializable {
 
     private String tag;
 
-    private String score;
+    private Integer score;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getDate() {
@@ -55,11 +55,11 @@ public class AnimeVo extends  BaseVo implements Serializable {
         this.tag = tag == null ? null : tag.trim();
     }
 
-    public String getScore() {
+    public Integer getScore() {
         return score;
     }
 
-    public void setScore(String score) {
-        this.score = score == null ? null : score.trim();
+    public void setScore(Integer score) {
+        this.score = score;
     }
 }
