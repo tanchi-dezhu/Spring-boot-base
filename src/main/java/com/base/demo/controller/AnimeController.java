@@ -1,5 +1,6 @@
 package com.base.demo.controller;
 
+import com.base.demo.reponse.ResonseResult;
 import com.base.demo.service.AnimeService;
 import com.base.demo.vo.AnimeVo;
 import com.base.demo.vo.Pagination;
@@ -19,6 +20,7 @@ public class AnimeController {
     private AnimeService animeService;
 
     @RequestMapping(value = "/selectAll",method = RequestMethod.POST)
+    @ResonseResult
     public ResponseEntity<Pagination> selectAll(@RequestBody AnimeVo body){
         Pagination page = null;
         try {
