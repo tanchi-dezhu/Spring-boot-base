@@ -3,6 +3,7 @@ package com.base.demo.enueration;
 public enum ResultCode {
     /*成功状态码*/
     SUCCESS(1, "成功"),
+    FAILER(400, "失败"),
     /*参数错误:1001-1999*/
     PARAM_IS_INVALID(1001,"参数无效"),
     PARAM_IS_BLANK(1002,"参数为空"),

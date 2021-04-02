@@ -16,8 +16,8 @@ public class WebAppconfigurer extends WebMvcConfigurationSupport {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // 可添加多个，这里选择拦截所有请求地址，进入后判断是否有加注解即可
-        registry.addInterceptor(getResponseResultInterceptor()).addPathPatterns("*")
-                .excludePathPatterns("/api/selectAll","/");
+        registry.addInterceptor(getResponseResultInterceptor()).addPathPatterns("/api/selectAll");
+//                .excludePathPatterns("/api/selectAll");
         super.addInterceptors(registry);
     }
 }

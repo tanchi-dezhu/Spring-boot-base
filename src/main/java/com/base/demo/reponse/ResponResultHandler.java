@@ -1,5 +1,7 @@
 package com.base.demo.reponse;
 
+import com.base.demo.enueration.ResultCode;
+import com.base.demo.vo.Pagination;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
@@ -32,6 +34,16 @@ public class ResponResultHandler implements ResponseBodyAdvice<Object> {
     @Override
     public Object beforeBodyWrite(Object o, MethodParameter methodParameter, MediaType mediaType, Class<? extends HttpMessageConverter<?>> aClass, ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse) {
         log.info("进入返回体，重写返回格式");
-        return null;
+        Result result = new Result();
+        Pagination pagination = (Pagination) o;
+        if (pagination.getList().isEmpty()) {
+            result.setResultCode(ResultCode.FAILER);
+            result.setMessages("请求异常");
+        }else{
+            result.setResultCode(ResultCode.SUCCESS);
+            result.setMessages("请求成功");
+            result.setData(o);
+        }
+        return result;
     }
 }
